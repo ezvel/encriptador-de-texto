@@ -1,3 +1,4 @@
+/*RESET*/
 * {
     box-sizing: border-box;
 }
@@ -6,11 +7,34 @@ html, body, header, main, footer, aside {
     width: 100%;
 }
 
+/*VARIABLES*/
 :root {
     --bg-color-body: #F3F5FC;
 }
 
+/*GENERAL*/
 body {
     background-color: var(--bg-color-body);
     min-height: 100vh;
 }
+
+/*HEADER*/
+header {
+    height: auto;
+}
+
+.header__logo-container {
+    width: 16.66%;
+    text-align: center;
+    padding: 20px 5px;
+}
+
+.header__logo-container img {
+    display: inline-block;
+}
+
+/*MAIN*/
+
+/*ASIDE*/
+
+/*FOOTER*/
