@@ -34,7 +34,19 @@ header {
 }
 
 /*MAIN*/
+.main {
+    padding: 20px;
+}
 
+.main__input-container {
+    height: auto;
+}
+
+.main__input-container textarea {
+    width: 100%;
+    border: none;
+    background-color: var(--bg-color-body);
+}
 /*ASIDE*/
 
 /*FOOTER*/
