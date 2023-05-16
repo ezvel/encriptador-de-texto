@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+html, body, header, main, footer, aside {
+    width: 100%;
+}
 
 :root {
     --bg-color-body: #F3F5FC;
@@ -9,4 +12,5 @@
 
 body {
     background-color: var(--bg-color-body);
+    min-height: 100vh;
 }
