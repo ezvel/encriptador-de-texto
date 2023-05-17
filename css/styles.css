@@ -1,4 +1,5 @@
-/*RESET*/
+/****************************************RESET*******************************************/
+
 * {
     box-sizing: border-box;
 }
@@ -7,55 +8,71 @@ html, body, header, main, footer, aside {
     width: 100%;
 }
 
-/*VARIABLES*/
+/****************************************VARIABLES*******************************************/
+
 :root {
     --bg-color-body: #F3F5FC;
     --color-dark-blue: #0A3871;
 }
 
-/*GENERAL*/
+/****************************************BODY*******************************************/
+
 body {
     background-color: var(--bg-color-body);
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
 }
 
-/*HEADER*/
+/****************************************HEADER*******************************************/
+
+/*********CABECERA*********/
 header {
     height: auto;
 }
 
+/*********CONTENEDOR DEL LOGO*********/
 .header__logo-container {
     width: 16.66%;
     text-align: center;
     padding: 20px 5px;
 }
 
+/*********IMÁGEN DEL LOGO*********/
 .header__logo-container img {
     display: inline-block;
 }
 
-/*MAIN*/
+/****************************************MAIN*******************************************/
+
+/*********CONTENIDO PRINCIPAL*********/
 .main {
     padding: 20px;
 }
 
+/*********CONTENEDOR DEL TEXT AREA*********/
 .main__input-container {
     height: auto;
 }
 
+/*********TEXT AREA*********/
 .main__input-container textarea {
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--color-dark-blue);
     width: 100%;
     border: none;
     background-color: var(--bg-color-body);
     margin-bottom: 20px;
 }
 
+/*********CONTENEDOR DE LOS BOTONES*********/
 .main__btn-container {
     width: 100%;
     margin-bottom: 30px;
 }
 
+/*********BOTONES*********/
 .main__btn-container button {
     display: block;
     width: 100%;
@@ -67,35 +84,40 @@ header {
     font-size: 16px;
 }
 
+/*********EL PRIMER BOTÓN*********/
 .main__btn-container button:first-child {
     margin-bottom: 24px;
 }
 
-/*ASIDE*/
+/****************************************ASIDE*******************************************/
+
+/*********ASIDE*********/
 .aside {
     padding: 20px;
 }
 
+/*********CONTENEDOR DE LA SALIDA POR PANTALLA*********/
 .aside__output-container {
     padding: 30px;
     background-color: #FFFFFF;
     border-radius: 20px;
 }
 
+/*********CONTENEDOR DEL CONTENIDO DEL TÍTULO Y DEL PÁRRAFO*********/
 .output-container__content {
     text-align: center;
 }
 
+/*********TITULO*********/
 .output-container__content h2 {
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 16px;
 }
 
+/*********PÁRRAFO*********/
 .output-container__content p {
     font-size: 16px;
 }
 
-
-
-/*FOOTER*/
+/****************************************FOOTER*******************************************/
