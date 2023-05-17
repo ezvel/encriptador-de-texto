@@ -21,6 +21,7 @@ body {
     background-color: var(--bg-color-body);
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
+    padding: 20px 0;
 }
 
 /****************************************HEADER*******************************************/
@@ -28,13 +29,14 @@ body {
 /*********CABECERA*********/
 header {
     height: auto;
+    padding: 0 20px;
 }
 
 /*********CONTENEDOR DEL LOGO*********/
 .header__logo-container {
     width: 16.66%;
-    text-align: center;
-    padding: 20px 5px;
+    text-align: left;
+    padding: 0px;
 }
 
 /*********IMÁGEN DEL LOGO*********/
