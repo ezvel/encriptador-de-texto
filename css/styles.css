@@ -1,7 +1,7 @@
 /****************************************RESET*******************************************/
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
 html, body, header, main, footer, aside {
@@ -15,23 +15,31 @@ html, body, header, main, footer, aside {
     --color-dark-blue: #0A3871;
 }
 
+/*************************************VISTA MOBILE*******************************************/
+
+
 /****************************************BODY*******************************************/
 
 body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     background-color: var(--bg-color-body);
     min-height: 100vh;
     width: 100%;
     min-width: 300px;
     font-family: 'Inter', sans-serif;
-    padding: 20px 0;
+    gap: 20px;
+    padding: 20px;
 }
 
 /****************************************HEADER*******************************************/
 
 /*********CABECERA*********/
 header {
+    grid-column-start: 1;
+    grid-column-end: 13;
     height: auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 /*********CONTENEDOR DEL LOGO*********/
@@ -50,12 +58,24 @@ header {
 
 /*********CONTENIDO PRINCIPAL*********/
 .main {
-    padding: 20px;
+    grid-column-start: 1;
+    grid-column-end: 13;
 }
 
 /*********CONTENEDOR DEL TEXT AREA*********/
+
+.main  form {
+    height: 100% !important;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 8px;
+}
+
 .main__input-container {
-    height: auto;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
 }
 
 /*********TEXT AREA*********/
@@ -70,6 +90,7 @@ header {
     background-color: var(--bg-color-body);
     margin-bottom: 20px;
     line-height: 150%;
+    height: 90%;
 }
 
 /*******TEXTO AVISO*******/
@@ -79,7 +100,6 @@ header {
     gap: 12px;
     justify-content: left;
     align-items: center;
-    margin: 20px 0;
     font-size: 12px;
     color: #495057;
 }
@@ -91,8 +111,11 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 30px;
     min-width: 300px;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 7;
 }
 
 /*********BOTONES*********/
@@ -111,30 +134,22 @@ header {
     margin-bottom: 24px;
 }
 
-/********BOTONES MEDIDA TABLETS**********/
-@media screen and (min-width: 768px){
-    .main__btn-container {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 24px;
-    }
-
-    .main__btn-container button:first-child {
-        margin-bottom: 0px;
-    }
-}
 
 /****************************************ASIDE*******************************************/
 
 /*********ASIDE*********/
 .aside {
-    padding: 20px;
+    grid-column-start: 1;
+    grid-column-end: 13;
 }
 
 /*********CONTENEDOR DE LA SALIDA POR PANTALLA*********/
 .aside__output-container {
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
     background-color: #FFFFFF;
     border-radius: 20px;
     min-width: 300px;
@@ -159,10 +174,90 @@ header {
 
 /****************************************FOOTER*******************************************/
 
+.footer{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-blue);
+    color: var(--bg-color-body);
+    padding: 30px;
+    height: 40vh;
+}
+
+/*************************************VISTA TABLET***************************************/
+@media screen and (min-width: 768px){
+    body {
+        padding: 20px 40px;
+    }
+    .main__btn-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .main__btn-container button:first-child {
+        margin-bottom: 0px;
+    }
+
+    .aside__output-container {
+        padding: 40px;
+    }
+}
+
+@media screen and (min-width: 950px){
+    body {
+        padding: 20px 60px;
+    }
+
+    .aside__output-container {
+        padding: 60px;
+    }
+}
 
 /************************************VISTA ESCRITORIO***********************************/
-/*
+
 @media screen and (min-width: 1200px){
-    
+    body {
+        max-height: 80vh;
+    }
+
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 9;
+    }
+
+    .main {
+        grid-column-start: 1;
+        grid-column-end: 9;
+        grid-row-start: 2;
+        grid-row-end: 8;
+    }
+
+    .aside {
+        grid-column-start: 9;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 8;
+        height: 100%;
+    }
+
+
+    .aside .aside__output-container {
+        height: 100%;
+    }
+
+    .footer {
+        grid-column-start: 1;
+        grid-column-end: 13;
+        grid-row-start: 8;
+        grid-row-end: 9;
+    }
+
 }
-*/
