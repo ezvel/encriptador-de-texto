@@ -127,12 +127,19 @@ header {
 /*********BOTONES*********/
 .main__btn-container button {
     width: 100%;
-    padding: 20px;
+    padding: 25px;
     border-radius: 20px;
     background-color: var(--bg-color-body);
     border: 1px solid var(--color-dark-blue);
     color: var(--color-dark-blue);
     font-size: 16px;
+}
+
+.main__btn-container button:hover {
+    background-color: var(--color-dark-blue);
+    border-color: var(--bg-color-body);
+    color: var(--bg-color-body);
+    cursor: pointer;
 }
 
 /*********EL PRIMER BOTÓN*********/
@@ -314,8 +321,12 @@ header {
         grid-column-end: 9;
         grid-row-start: 2;
         grid-row-end: 8;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .main__btn-container button {
+        background-color: #D8DFE8;
     }
 
     .aside {
