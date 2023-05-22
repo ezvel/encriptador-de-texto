@@ -195,8 +195,43 @@ header {
     align-items: center;
     background-color: var(--color-dark-blue);
     color: var(--bg-color-body);
-    padding: 30px;
-    height: 40vh;
+    padding: 50px 30px;
+    height: auto;
+}
+
+.footer__autores {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    min-width: 442px;
+    gap: 60px;
+}
+
+.footer__autores .autor-nombre p {
+    font-size: 2em;
+}
+
+.footer__autores .autores-reconocimiento p {
+    margin-bottom: 15px;
+}
+
+.footer__autores .autores-reconocimiento a {
+    text-decoration: none;
+    color: cyan;
+}
+
+.footer__autores .autores-reconocimiento a:hover {
+    text-decoration: underline;
+}
+
+
+.linkedin-icon-container,
+.github-icon-container {
+    width: 30px;
+    margin-bottom: 15px;
 }
 
 /*************************************VISTA TABLET***************************************/
@@ -304,6 +339,16 @@ header {
         grid-column-end: 13;
         grid-row-start: 8;
         grid-row-end: 9;
+        height: auto;
+    }
+
+    .footer__autores {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
     }
 
 }
