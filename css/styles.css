@@ -142,6 +142,7 @@ header {
     color: var(--bg-color-body);
     cursor: pointer;
     box-shadow: .05px .5px 10px .5px #999999;
+    transition: all .5s;
 }
 
 /*********EL PRIMER BOTÓN*********/
@@ -233,7 +234,8 @@ header {
     color: cyan;
 }
 
-.footer__autores .autores-reconocimiento a:hover {
+.footer__autores .autores-reconocimiento a:hover,
+.footer__autores .autores-reconocimiento a:active {
     text-decoration: underline;
 }
 
