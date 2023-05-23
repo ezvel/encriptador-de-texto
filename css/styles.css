@@ -180,6 +180,10 @@ header {
     text-align: center;
 }
 
+.output-container__content .img-munieco {
+    display: none;
+}
+
 /*********TITULO*********/
 .output-container__content h2 {
     font-size: 24px;
@@ -342,6 +346,10 @@ header {
         height: 100%;
         padding-left: 0px;
         padding-right: 60px;
+    }
+
+    .aside .output-container__content .img-munieco {
+        display: inline-block;
     }
 
 
