@@ -135,11 +135,13 @@ header {
     font-size: 16px;
 }
 
-.main__btn-container button:hover {
+.main__btn-container button:hover,
+.main__btn-container button:active {
     background-color: var(--color-dark-blue);
     border-color: var(--bg-color-body);
     color: var(--bg-color-body);
     cursor: pointer;
+    box-shadow: .05px .5px 10px .5px #999999;
 }
 
 /*********EL PRIMER BOTÓN*********/
