@@ -20,7 +20,7 @@
     </header>
     <main class="main">
         <!--Formulario para ingresar el texto para luego encriptarlo o desencriptarlo-->
-        <form>
+        <form onsubmit="return false;">
             <div class="main__input-container">
                 <textarea rows="8" placeholder="Ingrese el texto aqui"></textarea>
                 <div class="main__info-container">
@@ -29,20 +29,22 @@
                 </div>
             </div>
             <div class="main__btn-container">
-                <button>Encriptar</button>
-                <button>Desencriptar</button>
+                <button class="boton-encriptar">Encriptar</button>
+                <button class="boton-desencriptar">Desencriptar</button>
             </div>
         </form>
     </main>
     <aside class="aside">
         <!--Salido u output para mostrar el texo encriptado o desencriptado seǵun corresponda-->
         <div class="aside__output-container">
-            <div class="output-container__content">
+            <div class="output-container__content" id="output">
                 <img class="img-munieco" src="imagenes/munieco.svg">
-                <h2>Ningún mensaje fue encontrado</h2>
-                <p>
-                    Ingresa el texto que desees encriptar o desencriptar
-                </p>
+                <div class="contenido-output">
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>
+                        Ingresa el texto que desees encriptar o desencriptar
+                    </p>
+                </div>
             </div>
         </div>
     </aside>
@@ -70,5 +72,8 @@
 
         </div>
     </footer>
+
+    <!--SCRIPT JS-->
+    <script src="app.js"></script>
 </body>
 </html>
