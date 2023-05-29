@@ -180,9 +180,6 @@ header {
     text-align: center;
 }
 
-.aside__output-container {
-    overflow: auto;
-}
 
 .output-container__content .img-munieco {
     display: none;
@@ -198,6 +195,26 @@ header {
 /*********PÁRRAFO*********/
 .output-container__content p {
     font-size: 16px;
+}
+
+.copiar {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: var(--color-dark-blue);
+    border: 1px solid var(--color-dark-blue);
+}
+
+.copiar:hover{
+    background-color: var(--color-dark-blue);
+    border-color: var(--bg-color-body);
+    color: var(--bg-color-body);
+    cursor: pointer;
+    box-shadow: .05px .5px 10px .5px #999999;
+    transition: all .5s;
 }
 
 /****************************************FOOTER*******************************************/
@@ -394,3 +411,4 @@ header {
 .align-item-left {
     align-items: flex-start !important;
 }
+

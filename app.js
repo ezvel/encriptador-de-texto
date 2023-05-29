@@ -4,9 +4,11 @@ const input = document.querySelector("textarea");
 const output = document.querySelector(".contenido-output h2");
 const munieco = document.querySelector(".img-munieco");
 const contenidoOutput = document.querySelector(".aside__output-container");
+const botonCopiar = document.getElementById("copiar");
 
 let textoEncriptado;
 let textoSinEncriptar;
+
 
 function ocultar(){
     output.classList.add("ocultar");
@@ -49,17 +51,23 @@ function encriptar() {
                                            .replace("o", o_encriptado)
                                            .replace("u", u_encriptado); 
 
-    $contenido = document.querySelector("contenido-output p ");                                       
+    $contenido = document.querySelector(".contenido-output p");                                       
     
+
+    document.querySelector(".contenido-output p").textContent = "";
+    document.querySelector(".contenido-output p").textContent = textoEncriptado;
+
     $contenido.style.color = "#495057"; 
     $contenido.style.lineHeight = "150%";
     $contenido.style.textAlign = "left";
     $contenido.style.width = "100%";
     $contenido.style.verticalAlign = "top";
 
+    input.value = "";
 
-    document.querySelector(".contenido-output p").textContent = "";
-    document.querySelector(".contenido-output p").textContent = textoEncriptado;
+    botonCopiar.style.display = "block";
+
+
 
 }
 
@@ -83,22 +91,33 @@ function desencriptar() {
                                            .replace(o_encriptado, "o")
                                            .replace(u_encriptado, "u"); 
 
-    $contenido = document.querySelector("contenido-output p "); 
+    $contenido = document.querySelector(".contenido-output p "); 
     
+    
+    document.querySelector(".contenido-output p").textContent = "";
+    document.querySelector(".contenido-output p").textContent = textoSinEncriptar;
+
     $contenido.style.color = "#495057"; 
     $contenido.style.lineHeight = "150%";
     $contenido.style.textAlign = "left";
     $contenido.style.width = "100%";
     $contenido.style.verticalAlign = "top";
 
-    document.querySelector(".contenido-output p").textContent = "";
-    document.querySelector(".contenido-output p").textContent = textoSinEncriptar;  
+    input.value = "";
+    botonCopiar.style.display = "block";
+
+
+}
+
+function copiar(){
+    let contenidoACopiar = document.querySelector(".contenido-output p").textContent;
+    navigator.clipboard.writeText(contenidoACopiar);
 }
 
 
 botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar);
-
+botonCopiar.addEventListener("click", copiar);
 
 
 
