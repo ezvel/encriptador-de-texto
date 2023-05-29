@@ -404,6 +404,10 @@ header {
     display: none !important;
 }
 
+.mostrar {
+    display: inline-block !important;
+}
+
 .justify-content-start {
     justify-content: flex-start !important;
 }

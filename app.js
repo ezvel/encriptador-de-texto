@@ -10,20 +10,6 @@ let textoEncriptado;
 let textoSinEncriptar;
 
 
-function ocultar(){
-    output.classList.add("ocultar");
-    munieco.classList.add("ocultar");
-    
-}
-
-function alinearContenidoArriba() {
-    contenidoOutput.classList.add("justify-content-start");
-}
-
-function alinearContenidoIzquierda() {
-    contenidoOutput.classList.add("align-item-left");
-}
-
 /*
 La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
@@ -33,9 +19,10 @@ La letra "u" es convertida para "ufat"
 */
 
 function encriptar() {
-    ocultar();
-    alinearContenidoArriba();
-    alinearContenidoIzquierda();
+    output.classList.remove("mostrar");
+    output.classList.add("ocultar");
+    munieco.classList.add("ocultar");
+
     let a_encriptado = "ai";
     let e_encriptado = "enter";
     let i_encriptado = "imes";
@@ -68,14 +55,14 @@ function encriptar() {
     botonCopiar.style.display = "block";
 
 
-
 }
 
 
 function desencriptar() {
-    ocultar();
-    alinearContenidoArriba();
-    alinearContenidoIzquierda();
+    output.classList.remove("mostrar");
+    output.classList.add("ocultar");
+    munieco.classList.add("ocultar");
+
     let a_encriptado = "ai";
     let e_encriptado = "enter";
     let i_encriptado = "imes";
@@ -83,15 +70,29 @@ function desencriptar() {
     let u_encriptado = "ufat";
 
 
-    let textoEncriptado = input.value;
+    textoEncriptado = input.value;
 
-    textoSinEncriptar = textoSinEncriptar.replace(a_encriptado, "a")
-                                           .replace(e_encriptado, "e") 
-                                           .replace(i_encriptado, "i")
-                                           .replace(o_encriptado, "o")
-                                           .replace(u_encriptado, "u"); 
+    for (let indice = 0; indice < textoEncriptado.length; indice++) {
 
-    $contenido = document.querySelector(".contenido-output p "); 
+        if (textoEncriptado[indice] === "ai") {
+            textoSinEncriptar.replace("ai", "a");
+        }
+        if (textoEncriptado[indice] === "enter") {
+            textoSinEncriptar.replace("enter", "e");
+        }
+        if (textoEncriptado[indice] === "imes") {
+            textoSinEncriptar.replace("imes", "i");
+        }
+        if (textoEncriptado[indice] === "ober") {
+            textoSinEncriptar.replace("ober", "o");
+        }
+        if (textoEncriptado[indice] === "ufat") {
+            textoSinEncriptar.replace("ufat", "u");
+        }
+    }
+
+
+    $contenido = document.querySelector(".contenido-output p"); 
     
     
     document.querySelector(".contenido-output p").textContent = "";
@@ -104,7 +105,9 @@ function desencriptar() {
     $contenido.style.verticalAlign = "top";
 
     input.value = "";
+
     botonCopiar.style.display = "block";
+
 
 
 }
@@ -112,6 +115,15 @@ function desencriptar() {
 function copiar(){
     let contenidoACopiar = document.querySelector(".contenido-output p").textContent;
     navigator.clipboard.writeText(contenidoACopiar);
+    
+    document.querySelector(".contenido-output p").textContent = "";
+    botonCopiar.style.display = "none";
+   
+
+    output.classList.add("mostrar");
+    document.querySelector(".contenido-output p").textContent = "Ingresa el texto que desees encriptar o desencriptar";
+    document.querySelector(".contenido-output p").style.textAlign = "center";
+
 }
 
 
