@@ -49,10 +49,20 @@ function encriptar() {
                                            .replace("o", o_encriptado)
                                            .replace("u", u_encriptado); 
 
+    $contenido = document.querySelector("contenido-output p ");                                       
+    
+    $contenido.style.color = "#495057"; 
+    $contenido.style.lineHeight = "150%";
+    $contenido.style.textAlign = "left";
+    $contenido.style.width = "100%";
+    $contenido.style.verticalAlign = "top";
+
 
     document.querySelector(".contenido-output p").textContent = "";
-    document.querySelector(".contenido-output p").textContent = textoEncriptado;    
+    document.querySelector(".contenido-output p").textContent = textoEncriptado;
+
 }
+
 
 function desencriptar() {
     ocultar();
@@ -73,10 +83,18 @@ function desencriptar() {
                                            .replace(o_encriptado, "o")
                                            .replace(u_encriptado, "u"); 
 
+    $contenido = document.querySelector("contenido-output p "); 
+    
+    $contenido.style.color = "#495057"; 
+    $contenido.style.lineHeight = "150%";
+    $contenido.style.textAlign = "left";
+    $contenido.style.width = "100%";
+    $contenido.style.verticalAlign = "top";
 
     document.querySelector(".contenido-output p").textContent = "";
-    document.querySelector(".contenido-output p").textContent = textoSinEncriptar;    
+    document.querySelector(".contenido-output p").textContent = textoSinEncriptar;  
 }
+
 
 botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar);

@@ -180,6 +180,10 @@ header {
     text-align: center;
 }
 
+.aside__output-container {
+    overflow: auto;
+}
+
 .output-container__content .img-munieco {
     display: none;
 }
