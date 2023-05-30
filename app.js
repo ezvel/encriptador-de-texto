@@ -36,6 +36,7 @@ function encriptar() {
     document.querySelector(".aside__output-container").classList.add("align-item-left");
     output.classList.remove("mostrar");
     output.classList.add("ocultar");
+    munieco.classList.remove("mostrar");
     munieco.classList.add("ocultar");
 
     let a_encriptado = "ai";
@@ -78,7 +79,8 @@ function desencriptar() {
     document.querySelector(".aside__output-container").classList.add("align-item-left");
     output.classList.remove("mostrar");
     output.classList.add("ocultar");
-    munieco.classList.add("ocultar");
+    munieco.classList.remove("mostrar");
+    munieco.classList.add("ocultar");2
 
     let a_encriptado = "ai";
     let e_encriptado = "enter";
@@ -139,8 +141,14 @@ function copiar(){
     document.querySelector(".contenido-output p").textContent = "";
     botonCopiar.style.display = "none";
    
-
+    output.classList.remove("ocultar");
     output.classList.add("mostrar");
+
+    if(window.innerWidth >= 1200 ) {
+        munieco.classList.remove("ocultar");
+        munieco.classList.add("mostrar");
+    }
+
     document.querySelector(".contenido-output p").textContent = "Ingresa el texto que desees encriptar o desencriptar";
     document.querySelector(".contenido-output p").style.textAlign = "center";
 
