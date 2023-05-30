@@ -32,8 +32,10 @@ La letra "u" es convertida para "ufat"
 }*/
 
 function encriptar() {
+    //EL ELEMENTO SE ALINEA DE UNA FORMA CUÁNDO DICE INSERTE.... QUE CUÁNDO SE MUESTRA EL RESULTADO
     document.querySelector(".aside__output-container").classList.add("justify-content-start");
     document.querySelector(".aside__output-container").classList.add("align-item-left");
+    
     output.classList.remove("mostrar");
     output.classList.add("ocultar");
     munieco.classList.remove("mostrar");
@@ -75,8 +77,10 @@ function encriptar() {
 
 
 function desencriptar() {
+    //EL ELEMENTO SE ALINEA DE UNA FORMA CUÁNDO DICE INSERTE.... QUE CUÁNDO SE MUESTRA EL RESULTADO
     document.querySelector(".aside__output-container").classList.add("justify-content-start");
     document.querySelector(".aside__output-container").classList.add("align-item-left");
+
     output.classList.remove("mostrar");
     output.classList.add("ocultar");
     munieco.classList.remove("mostrar");
@@ -141,9 +145,17 @@ function copiar(){
     document.querySelector(".contenido-output p").textContent = "";
     botonCopiar.style.display = "none";
    
+    /*
+    NECESITAMOS MOSTRAR EL MENSAJE DE INSERTE... EN EL MOMENTO QUE DAMOS COPIAR
+    */
     output.classList.remove("ocultar");
     output.classList.add("mostrar");
 
+    /*
+    CON ESTA LÓGICA NOS ASEGURAMOS QUE EL MUÑECO SE MUESTRE AL APRETAR COPIAR SOLAMENTE CUÁNDO EL TAMAÑO
+    DE PANTALLA SEA EL DE ESCRITORIO. TENÍAMOS EL PROBLEMA QUE AL MOSTRAR EL MUÑECO SIN ESTA CONDICIONAL
+    EL MUÑECO SE HACÍA EVIDENTE EN UN TAMAÑO TABLET Y CELULAR, LO CUÁL NO ERA DESEADO.
+    */
     if(window.innerWidth >= 1200 ) {
         munieco.classList.remove("ocultar");
         munieco.classList.add("mostrar");
@@ -159,6 +171,20 @@ botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar);
 botonCopiar.addEventListener("click", copiar);
 
+
+/*
+TENEMOS EL PROBLEMA EN QUE AL DAR COPIAR EL MUÑECO APARECE CON EL TEXTO "INSERTE...", HASTA ACÁ VA BIEN, PERO SI YO EN ESE MOMENTO
+ACHICO EL TAMAÑO DE VENTANA ME SIGUE APARECIENDO EL MUÑECO EN TAMAÑO TABLET. 
+PARA ELLO UTILIZAREMOS EL EVENTO RESIZE CON EL MÉTODO INNERWIDTH PARA DETECTAR QUE EN DETERMINADO TAMAÑO DE VENTANA EL MUÑECO
+DESAPAREZCA
+*/
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth < 1200) {
+        munieco.classList.remove("mostrar");
+        munieco.classList.add("ocultar");
+    }
+})
 
 
 

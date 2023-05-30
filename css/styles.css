@@ -306,6 +306,10 @@ header {
     .aside__output-container {
         padding: 40px;
     }
+
+    .img-munieco {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 950px){
