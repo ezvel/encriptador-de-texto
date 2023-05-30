@@ -128,7 +128,7 @@ header {
 .main__btn-container button {
     width: 100%;
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 25px;
     background-color: var(--bg-color-body);
     border: 1px solid var(--color-dark-blue);
     color: var(--color-dark-blue);
@@ -202,7 +202,7 @@ header {
     margin-top: 20px;
     width: 100%;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 25px;
     background-color: transparent;
     color: var(--color-dark-blue);
     border: 1px solid var(--color-dark-blue);
@@ -359,6 +359,7 @@ header {
         background-color: #D8DFE8;
     }
 
+    /*********ASIDE*********/
     .aside {
         grid-column-start: 9;
         grid-column-end: 13;
@@ -367,6 +368,27 @@ header {
         height: 100%;
         padding-left: 0px;
         padding-right: 60px;
+    }
+
+
+    /*********CONTENEDOR DE LA SALIDA POR PANTALLA*********/
+    .aside__output-container {
+        position: relative;
+    }
+
+    /*********CONTENEDOR DEL CONTENIDO DEL TÍTULO Y DEL PÁRRAFO*********/
+    .output-container__content {
+        text-align: center;
+    }
+
+    .copiar {
+        position: absolute;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        width: 80%;
+        right: 10%;
     }
 
     .aside .output-container__content .img-munieco {

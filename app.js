@@ -18,7 +18,22 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 */
 
+/*.aside__output-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    min-width: 300px;
+    height: 100%;
+    box-shadow:.5px .5px 20px 0px #DDDDDD, -.5px -.5px 20px 0px #DDDDDD;
+}*/
+
 function encriptar() {
+    document.querySelector(".aside__output-container").classList.add("justify-content-start");
+    document.querySelector(".aside__output-container").classList.add("align-item-left");
     output.classList.remove("mostrar");
     output.classList.add("ocultar");
     munieco.classList.add("ocultar");
@@ -59,6 +74,8 @@ function encriptar() {
 
 
 function desencriptar() {
+    document.querySelector(".aside__output-container").classList.add("justify-content-start");
+    document.querySelector(".aside__output-container").classList.add("align-item-left");
     output.classList.remove("mostrar");
     output.classList.add("ocultar");
     munieco.classList.add("ocultar");
@@ -113,6 +130,9 @@ function desencriptar() {
 }
 
 function copiar(){
+    document.querySelector(".aside__output-container").classList.remove("justify-content-start");
+    document.querySelector(".aside__output-container").classList.remove("align-item-left");
+
     let contenidoACopiar = document.querySelector(".contenido-output p").textContent;
     navigator.clipboard.writeText(contenidoACopiar);
     
