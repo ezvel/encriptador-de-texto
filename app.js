@@ -9,92 +9,76 @@ const botonCopiar = document.getElementById("copiar");
 let textoEncriptado;
 let textoSinEncriptar;
 
-
-/*
-La letra "e" es convertida para "enter"
-La letra "i" es convertida para "imes"
-La letra "a" es convertida para "ai"
-La letra "o" es convertida para "ober"
-La letra "u" es convertida para "ufat"
-*/
-
-/*.aside__output-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 32px;
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    min-width: 300px;
-    height: 100%;
-    box-shadow:.5px .5px 20px 0px #DDDDDD, -.5px -.5px 20px 0px #DDDDDD;
-}*/
-
-function encriptar() {
-    //EL ELEMENTO SE ALINEA DE UNA FORMA CUÁNDO DICE INSERTE.... QUE CUÁNDO SE MUESTRA EL RESULTADO
+//FUNCIONES NECESARIAS DE RUTINA PARA LAS FUNCIONES PRINCIPALES ENCRIPTR Y DESENCRIPTAR
+function formatearSalida(){
+    //EL ELEMENTO SE ALINEA DE UNA FORMA CUÁNDO DICE INGRESE.... QUE CUÁNDO SE MUESTRA EL RESULTADO
     document.querySelector(".aside__output-container").classList.add("justify-content-start");
     document.querySelector(".aside__output-container").classList.add("align-item-left");
-    
+    $contenido = document.querySelector(".contenido-output p"); 
+    $contenido.style.color = "#495057"; 
+    $contenido.style.lineHeight = "150%";
+    $contenido.style.textAlign = "left";
+    $contenido.style.width = "100%";
+    $contenido.style.verticalAlign = "top";
+    $contenido.style.fontSize = "20px";
+}
+
+function mostrarResultado(texto) {
+    document.querySelector(".contenido-output p").textContent = "";
+    document.querySelector(".contenido-output p").textContent = texto;
+    input.value = "";
+}
+
+function ocultarMuniecoYTextoAntesDelResultado(){
     output.classList.remove("mostrar");
     output.classList.add("ocultar");
     munieco.classList.remove("mostrar");
     munieco.classList.add("ocultar");
+}
 
-    let a_encriptado = "ai";
-    let e_encriptado = "enter";
-    let i_encriptado = "imes";
-    let o_encriptado = "ober";
-    let u_encriptado = "ufat";
+//FUNCIÓN ENCRIPTAR Y DESENCRIPTAR
+function encriptar() {
+    formatearSalida();
+    ocultarMuniecoYTextoAntesDelResultado();
 
+    //VARIABLES DE ENCRIPTACIÓN
+    const a_encriptado = "ai";
+    const e_encriptado = "enter";
+    const i_encriptado = "imes";
+    const o_encriptado = "ober";
+    const u_encriptado = "ufat";
 
+    //TOMAR VALOR DEL TEXTAREA
     textoSinEncriptar = input.value;
 
+    //ENCRIPTAR
     textoEncriptado = textoSinEncriptar.replace("a",a_encriptado)
                                            .replace("e", e_encriptado) 
                                            .replace("i", i_encriptado)
                                            .replace("o", o_encriptado)
                                            .replace("u", u_encriptado); 
 
-    $contenido = document.querySelector(".contenido-output p");                                       
+                                          
+    mostrarResultado(textoEncriptado);
     
-
-    document.querySelector(".contenido-output p").textContent = "";
-    document.querySelector(".contenido-output p").textContent = textoEncriptado;
-
-    $contenido.style.color = "#495057"; 
-    $contenido.style.lineHeight = "150%";
-    $contenido.style.textAlign = "left";
-    $contenido.style.width = "100%";
-    $contenido.style.verticalAlign = "top";
-
-    input.value = "";
-
     botonCopiar.style.display = "block";
-
-
 }
 
-
 function desencriptar() {
-    //EL ELEMENTO SE ALINEA DE UNA FORMA CUÁNDO DICE INSERTE.... QUE CUÁNDO SE MUESTRA EL RESULTADO
-    document.querySelector(".aside__output-container").classList.add("justify-content-start");
-    document.querySelector(".aside__output-container").classList.add("align-item-left");
+    formatearSalida();
+    ocultarMuniecoYTextoAntesDelResultado();
 
-    output.classList.remove("mostrar");
-    output.classList.add("ocultar");
-    munieco.classList.remove("mostrar");
-    munieco.classList.add("ocultar");2
+    //VARIABLES DE ENCRIPTACIÓN
+    const a_encriptado = "ai";
+    const e_encriptado = "enter";
+    const i_encriptado = "imes";
+    const o_encriptado = "ober";
+    const u_encriptado = "ufat";
 
-    let a_encriptado = "ai";
-    let e_encriptado = "enter";
-    let i_encriptado = "imes";
-    let o_encriptado = "ober";
-    let u_encriptado = "ufat";
-
-
+    //TOMAR VALOR DEL TEXTAREA
     textoEncriptado = input.value;
 
+    //ENCRIPTAR
     for (let indice = 0; indice < textoEncriptado.length; indice++) {
 
         if (textoEncriptado[indice] === "ai") {
@@ -114,34 +98,23 @@ function desencriptar() {
         }
     }
 
-
-    $contenido = document.querySelector(".contenido-output p"); 
-    
-    
-    document.querySelector(".contenido-output p").textContent = "";
-    document.querySelector(".contenido-output p").textContent = textoSinEncriptar;
-
-    $contenido.style.color = "#495057"; 
-    $contenido.style.lineHeight = "150%";
-    $contenido.style.textAlign = "left";
-    $contenido.style.width = "100%";
-    $contenido.style.verticalAlign = "top";
-
-    input.value = "";
+    mostrarResultado(textoSinEncriptar);
 
     botonCopiar.style.display = "block";
 
-
-
 }
 
+//FUNCIÓN COPIAR AL PORTAPAPELES
 function copiar(){
+    //BORRAMOS EL FORMATEO INICIAL PARA MOSTRAR EL CONTENIDO Y EL MUÑECO SEGÚN EL TAMAÑO DE PANTALLA
     document.querySelector(".aside__output-container").classList.remove("justify-content-start");
     document.querySelector(".aside__output-container").classList.remove("align-item-left");
 
+    //AGREGA EL MÉTODO PARA COPIAR AL CLIPBOARD
     let contenidoACopiar = document.querySelector(".contenido-output p").textContent;
     navigator.clipboard.writeText(contenidoACopiar);
     
+    //ELIMINA EL CONTENIDO AL COPIAR PARA MOSTRAR MÁS ADELANTE EL "INGRESA EL TEXTO..."
     document.querySelector(".contenido-output p").textContent = "";
     botonCopiar.style.display = "none";
    
@@ -161,16 +134,17 @@ function copiar(){
         munieco.classList.add("mostrar");
     }
 
+    //MOSTRAR EL TEXTO "INGRESE..." CON UNA ALINEACIÓN CENTRAL
     document.querySelector(".contenido-output p").textContent = "Ingresa el texto que desees encriptar o desencriptar";
     document.querySelector(".contenido-output p").style.textAlign = "center";
 
 }
 
 
+//EVENTOS
 botonEncriptar.addEventListener("click", encriptar);
 botonDesencriptar.addEventListener("click", desencriptar);
 botonCopiar.addEventListener("click", copiar);
-
 
 /*
 TENEMOS EL PROBLEMA EN QUE AL DAR COPIAR EL MUÑECO APARECE CON EL TEXTO "INSERTE...", HASTA ACÁ VA BIEN, PERO SI YO EN ESE MOMENTO
@@ -178,7 +152,6 @@ ACHICO EL TAMAÑO DE VENTANA ME SIGUE APARECIENDO EL MUÑECO EN TAMAÑO TABLET.
 PARA ELLO UTILIZAREMOS EL EVENTO RESIZE CON EL MÉTODO INNERWIDTH PARA DETECTAR QUE EN DETERMINADO TAMAÑO DE VENTANA EL MUÑECO
 DESAPAREZCA
 */
-
 window.addEventListener("resize", () => {
     if (window.innerWidth < 1200) {
         munieco.classList.remove("mostrar");
