@@ -173,11 +173,13 @@ header {
     min-width: 300px;
     height: 100%;
     box-shadow:.5px .5px 20px 0px #DDDDDD, -.5px -.5px 20px 0px #DDDDDD;
+    overflow: auto;
 }
 
 /*********CONTENEDOR DEL CONTENIDO DEL TÍTULO Y DEL PÁRRAFO*********/
 .output-container__content {
     text-align: center;
+    word-wrap: break-word;
 }
 
 
