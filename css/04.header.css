@@ -1,0 +1,44 @@
+/****************************************HEADER*******************************************/
+
+/*********CABECERA*********/
+header {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    height: auto;
+    padding: 0;
+    padding: 0 20px;
+}
+
+/*********CONTENEDOR DEL LOGO*********/
+.header__logo-container {
+    width: 16.66%;
+    text-align: left;
+    padding: 0px;
+}
+
+/*********IMÁGEN DEL LOGO*********/
+.header__logo-container img {
+    display: inline-block;
+}
+
+/*************************************VISTA TABLET Y ESCRITORIO********************************/
+@media screen and (min-width: 768px){
+    .header {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media screen and (min-width: 950px){
+    .header {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 9;
+    }
+}

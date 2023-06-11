@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+/****************************************RESET*******************************************/
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -44,4 +46,14 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+/****MI RESET*********/
+
+* {
+    box-sizing: border-box !important;
+}
+
+html, body, header, main, footer, aside {
+    width: 100%;
 }

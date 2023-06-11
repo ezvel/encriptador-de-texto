@@ -1,0 +1,137 @@
+/****************************************ASIDE*******************************************/
+
+/*********ASIDE*********/
+.aside {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*********CONTENEDOR DE LA SALIDA POR PANTALLA*********/
+.aside__output-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    min-width: 300px;
+    height: 100%;
+    box-shadow:.5px .5px 20px 0px #DDDDDD, -.5px -.5px 20px 0px #DDDDDD;
+}
+
+/*********CONTENEDOR DEL CONTENIDO DEL TÍTULO Y DEL PÁRRAFO*********/
+.output-container__content {
+    text-align: center;
+    word-wrap: break-word;
+}
+
+
+.output-container__content .img-munieco {
+    display: none;
+}
+
+/*********TITULO*********/
+.output-container__content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/*********PÁRRAFO*********/
+.output-container__content p {
+    font-size: 16px;
+}
+
+.copiar {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: transparent;
+    color: var(--color-dark-blue);
+    border: 1px solid var(--color-dark-blue);
+}
+
+.copiar:hover{
+    background-color: var(--color-dark-blue);
+    border-color: var(--bg-color-body);
+    color: var(--bg-color-body);
+    cursor: pointer;
+    box-shadow: .05px .5px 10px .5px #999999;
+    transition: all .5s;
+}
+
+
+/*************************************VISTA TABLET Y ESCRITORIO********************************/
+@media screen and (min-width: 768px){
+    .aside {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .aside__output-container {
+        padding: 40px;
+    }
+
+}
+
+
+@media screen and (min-width: 950px){
+    .aside {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .aside__output-container {
+        padding: 60px;
+    }
+}
+
+
+@media screen and (min-width: 1200px){
+    /*********ASIDE*********/
+    .aside {
+        grid-column-start: 9;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 8;
+        height: 100%;
+        padding-left: 0px;
+        padding-right: 60px;
+    }
+
+
+    /*********CONTENEDOR DE LA SALIDA POR PANTALLA*********/
+    .aside__output-container {
+        position: relative;
+    }
+
+    /*********CONTENEDOR DEL CONTENIDO DEL TÍTULO Y DEL PÁRRAFO*********/
+    .output-container__content {
+        text-align: center;
+    }
+
+    .copiar {
+        position: absolute;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        width: 80%;
+        right: 10%;
+    }
+
+    .aside .output-container__content .img-munieco {
+        display: inline-block;
+    }
+
+
+    .aside .aside__output-container {
+        height: 100%;
+        border-radius: 40px;
+    }
+}

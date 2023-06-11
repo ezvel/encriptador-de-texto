@@ -1,0 +1,76 @@
+/****************************************FOOTER*******************************************/
+
+.footer{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark-blue);
+    color: var(--bg-color-body);
+    padding: 50px 30px;
+    height: auto;
+}
+
+.footer__autores {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    min-width: 442px;
+    gap: 60px;
+}
+
+.footer__autores .autor-nombre p {
+    font-size: 2em;
+}
+
+.footer__autores .autores-reconocimiento p {
+    margin-bottom: 15px;
+}
+
+.footer__autores .autores-reconocimiento a {
+    text-decoration: none;
+    color: cyan;
+}
+
+.footer__autores .autores-reconocimiento a:hover,
+.footer__autores .autores-reconocimiento a:active {
+    text-decoration: underline;
+}
+
+
+.linkedin-icon-container,
+.github-icon-container {
+    width: 30px;
+    margin-bottom: 15px;
+}
+
+/**************************************ESCRITORIO**************+*****************************/
+
+@media screen and (min-width: 1200px){
+
+    .footer {
+        grid-column-start: 1;
+        grid-column-end: 13;
+        grid-row-start: 8;
+        grid-row-end: 9;
+        height: auto;
+    }
+
+    .footer__autores {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        text-align: left;
+    }
+
+}

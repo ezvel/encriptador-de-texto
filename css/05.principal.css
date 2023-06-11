@@ -1,0 +1,131 @@
+/*********CONTENIDO PRINCIPAL*********/
+.main {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    padding: 0 20px;
+}
+
+/*********CONTENEDOR DEL TEXT AREA*********/
+
+.main  form {
+    height: 100% !important;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 8px;
+}
+
+.main__input-container {
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 6;
+}
+
+/*********TEXT AREA*********/
+.main__input-container textarea {
+    font-family: inherit;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--color-dark-blue);
+    width: 100%;
+    min-width: 300px;
+    border: none;
+    background-color: var(--bg-color-body);
+    margin-bottom: 20px;
+    line-height: 150%;
+    height: 90%;
+}
+
+/*******TEXTO AVISO*******/
+.main__info-container {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: left;
+    align-items: center;
+    font-size: 12px;
+    color: #495057;
+}
+
+/*********CONTENEDOR DE LOS BOTONES*********/
+.main__btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 300px;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+/*********BOTONES*********/
+.main__btn-container button {
+    width: 100%;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: var(--bg-color-body);
+    border: 1px solid var(--color-dark-blue);
+    color: var(--color-dark-blue);
+    font-size: 16px;
+}
+
+.main__btn-container button:hover,
+.main__btn-container button:active {
+    background-color: var(--color-dark-blue);
+    border-color: var(--bg-color-body);
+    color: var(--bg-color-body);
+    cursor: pointer;
+    box-shadow: .05px .5px 10px .5px #999999;
+    transition: all .5s;
+}
+
+/*********EL PRIMER BOTÓN*********/
+.main__btn-container button:first-child {
+    margin-bottom: 24px;
+}
+
+
+/*************************************VISTA TABLET Y ESCRITORIO********************************/
+@media screen and (min-width: 768px){
+    .main {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .main__btn-container {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .main__btn-container button:first-child {
+        margin-bottom: 0px;
+    }
+}
+
+
+@media screen and (min-width: 950px){
+    .main {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .main {
+        grid-column-start: 1;
+        grid-column-end: 9;
+        grid-row-start: 2;
+        grid-row-end: 8;
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .main__btn-container button {
+        background-color: #D8DFE8;
+    }
+}

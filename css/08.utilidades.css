@@ -1,0 +1,17 @@
+/*clases dinámicas con css*/
+.ocultar {
+    display: none !important;
+}
+
+.mostrar {
+    display: inline-block !important;
+}
+
+.justify-content-start {
+    justify-content: flex-start !important;
+}
+
+.align-item-left {
+    align-items: flex-start !important;
+}
+
