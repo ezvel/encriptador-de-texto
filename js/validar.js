@@ -34,15 +34,14 @@ function validarTextoAEncriptar(textoSinEncriptar) {
         }
     }
 
-    for(let i = 0; i < textoSinEncriptar.length; i++) {
-        if (
-            textoSinEncriptar.includes(a_encriptado) || textoSinEncriptar.includes(e_encriptado) ||
-            textoSinEncriptar.includes(i_encriptado) || textoSinEncriptar.includes(o_encriptado) || textoSinEncriptar.includes(u_encriptado) 
-           ) 
-        {
-            return "No puedes encriptar un texto ya encriptado";
-        }
+    if (
+        textoSinEncriptar.includes(a_encriptado) || textoSinEncriptar.includes(e_encriptado) ||
+        textoSinEncriptar.includes(i_encriptado) || textoSinEncriptar.includes(o_encriptado) || textoSinEncriptar.includes(u_encriptado) 
+       ) 
+    {
+        return "No puedes encriptar un texto ya encriptado";
     }
+    
 
     return true;
 }
@@ -84,18 +83,8 @@ function validarTextoADesencriptar(textoEncriptado) {
         }
     }
 
-    /*
-    for(let i = 0; i < textoEncriptado.length; i++) {
-        if (
-            !textoEncriptado.includes(a_encriptado) || !textoEncriptado.includes(e_encriptado) || 
-            !textoEncriptado.includes(i_encriptado) || !textoEncriptado.includes(o_encriptado) || !textoEncriptado.includes(u_encriptado)
-           ) 
-        {
-            return "No puedes desencriptar un texto ya desencriptado";
-        }
-    }
-*/
     return true;
+
 }
 
 
