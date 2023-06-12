@@ -35,7 +35,11 @@ $botonDesencriptar.addEventListener("click", () => {
         mostrarResultado(textoSinEncriptar);
     
         mostrarBotonCopiar();
-    } else{
-        console.log(textoValidado);
+    } else {
+        const $mensajeErrorParrafo = document.getElementById('mensaje-de-error');
+        const $textarea = document.querySelector('textarea');
+        $textarea.classList.add('border-red');
+        $mensajeErrorParrafo.textContent = "* " + textoValidado;
+        $mensajeErrorParrafo.classList.add('red');
     }
 });

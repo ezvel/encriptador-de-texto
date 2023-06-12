@@ -36,6 +36,10 @@ $botonEncriptar.addEventListener("click", () => {
         
         mostrarBotonCopiar(); 
     } else {
-        console.log(textoValidado);
+        const $mensajeErrorParrafo = document.getElementById('mensaje-de-error');
+        const $textarea = document.querySelector('textarea');
+        $textarea.classList.add('border-red');
+        $mensajeErrorParrafo.textContent = "* " + textoValidado;
+        $mensajeErrorParrafo.classList.add('red');
     }
 });

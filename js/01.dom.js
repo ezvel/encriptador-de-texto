@@ -105,10 +105,26 @@ PARA ELLO UTILIZAREMOS EL EVENTO RESIZE CON EL MÉTODO INNERWIDTH PARA DETECTAR 
 DESAPAREZCA
 */
 window.addEventListener("resize", () => {
+    const $munieco = document.querySelector(".img-munieco");
     if (window.innerWidth < 1200) {
-        munieco.classList.remove("mostrar");
-        munieco.classList.add("ocultar");
+        $munieco.classList.remove("mostrar");
+        $munieco.classList.add("ocultar");
     }
+})
+
+
+/*UNA VEZ QUE APARECE EL RECUADRO ROJO Y EL TEXTO ROJO COMO MENSAJES DE ERROR
+QUEREMOS QUE AL MOMENTO DE HACER CLICK EN EL TEXTAREA PARA VOLVER A INTENTARLO LOS
+ESTILOS VUELVAN A LA NORMALIDAD*/
+
+document.querySelector('textarea').addEventListener('click', () => {
+    const $textarea = document.querySelector('textarea');
+    const $mensajeErrorParrafo = document.getElementById('mensaje-de-error');
+
+    $textarea.classList.remove('border-red');
+    $mensajeErrorParrafo.textContent = "";
+    $mensajeErrorParrafo.classList.remove('red');
+
 })
 
 

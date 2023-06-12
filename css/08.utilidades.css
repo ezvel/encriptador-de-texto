@@ -15,3 +15,10 @@
     align-items: flex-start !important;
 }
 
+.red {
+    color: red;
+}
+
+.border-red {
+    border: 2px solid red !important;
+}
