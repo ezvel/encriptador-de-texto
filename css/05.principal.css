@@ -89,6 +89,12 @@
 
 
 /*************************************VISTA TABLET Y ESCRITORIO********************************/
+@media screen and (max-width: 769px) {
+    .main__btn-container {
+        margin-top: 30px;
+    }
+}
+
 @media screen and (min-width: 768px){
     .main {
         padding-left: 40px;
