@@ -1,3 +1,35 @@
+function validarIncluyeSimbolosEspeciales(texto, simbolosEspeciales) {
+    for(let i = 0; i < simbolosEspeciales.length; i++) {
+        if (texto.includes(simbolosEspeciales[i])) {
+            return true;
+        }
+    }
+}
+
+function validarIncluyeLetrasConAcento(texto, letrasConAcento) {
+    for(let i = 0; i < letrasConAcento.length; i++) {
+        if (texto.includes(letrasConAcento[i])) {
+            return true;
+        }
+    }
+}
+
+function validarIncluyeNumeros(texto, numeros) {
+    for(let i = 0; i < numeros.length; i++) {
+        if (texto.includes(numeros[i])) {
+            return true;
+        }
+    }
+}
+
+function validarIncluyeMayusculas(texto, letrasMayusculas) {
+    for(let i = 0; i < letrasMayusculas.length; i++) {
+        if (texto.includes(letrasMayusculas[i])) {
+            return true;
+        }
+    }
+}
+
 function validarTextoAEncriptar(textoSinEncriptar) {
     const simbolosEspeciales = ["|","°","¬","!","\"","@","#","·","$","~","%","½","&","¬","/","{","(","[",")","]","=","}","?","'","¿","¡","¸","´","¨","+","*","^","`",",","•",";",".","·",":","-","_"];
     const letrasConAcento = ["Á","Ć","É","Ǵ","Í","Ḱ","Ĺ","Ḿ","Ń","Ó","Ṕ","Ŕ","Ś","Ú","Ǘ","Ẃ","Ý","Ź","ć","ǵ","ḱ","ĺ","ḿ","ń","ṕ","ŕ","ś","ǘ","ẃ","ý","ź","á", "é", "í", "ó", "ú"]; 
@@ -10,27 +42,19 @@ function validarTextoAEncriptar(textoSinEncriptar) {
     const o_encriptado = "ober";
     const u_encriptado = "ufat";
 
-    for(let i = 0; i < simbolosEspeciales.length; i++) {
-        if (textoSinEncriptar.includes(simbolosEspeciales[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
-        }
-    }
 
-    for(let i = 0; i < letrasConAcento.length; i++) {
-        if (textoSinEncriptar.includes(letrasConAcento[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
+    for(let i = 0; i < textoSinEncriptar.length; i++) {
+        if(validarIncluyeSimbolosEspeciales(textoSinEncriptar[i], simbolosEspeciales) === true) {
+            return "No puedes incluir símbolos especiales";
         }
-    }
-
-    for(let i = 0; i < numeros.length; i++) {
-        if (textoSinEncriptar.includes(numeros[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
+        if(validarIncluyeNumeros(textoSinEncriptar[i], numeros) === true) {
+            return "No puedes incluir números";
         }
-    }
-
-    for(let i = 0; i < letrasMayusculas.length; i++) {
-        if (textoSinEncriptar.includes(letrasMayusculas[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
+        if(validarIncluyeMayusculas(textoSinEncriptar[i], letrasMayusculas) === true) {
+            return "No puedes incluir mayúsculas"; 
+        }
+        if(validarIncluyeLetrasConAcento(textoSinEncriptar[i], letrasConAcento) === true) {
+            return "No puedes incluir letras con acentos";
         }
     }
 
@@ -42,7 +66,6 @@ function validarTextoAEncriptar(textoSinEncriptar) {
         return "No puedes encriptar un texto ya encriptado";
     }
     
-
     return true;
 }
 
@@ -53,27 +76,18 @@ function validarTextoADesencriptar(textoEncriptado) {
     const numeros = ["0","1","2","3","4","5","6","7","8","9"];
     const letrasMayusculas = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
-    for(let i = 0; i < simbolosEspeciales.length; i++) {
-        if (textoEncriptado.includes(simbolosEspeciales[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
+    for(let i = 0; i < textoEncriptado.length; i++) {
+        if(validarIncluyeSimbolosEspeciales(textoEncriptado[i], simbolosEspeciales) === true) {
+            return "No puedes incluir símbolos especiales";
         }
-    }
-
-    for(let i = 0; i < letrasConAcento.length; i++) {
-        if (textoEncriptado.includes(letrasConAcento[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
+        if(validarIncluyeNumeros(textoEncriptado[i], numeros) === true) {
+            return "No puedes incluir números";
         }
-    }
-
-    for(let i = 0; i < numeros.length; i++) {
-        if (textoEncriptado.includes(numeros[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
+        if(validarIncluyeMayusculas(textoEncriptado[i], letrasMayusculas) === true) {
+            return "No puedes incluir mayúsculas"; 
         }
-    }
-
-    for(let i = 0; i < letrasMayusculas.length; i++) {
-        if (textoEncriptado.includes(letrasMayusculas[i])) {
-            return "No puedes ingresar símbolos especiales, mayúsculas, letras con acento ni números";
+        if(validarIncluyeLetrasConAcento(textoEncriptado[i], letrasConAcento) === true) {
+            return "No puedes incluir letras con acentos";
         }
     }
 
